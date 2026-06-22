@@ -19,6 +19,10 @@
                 </div>
             </div>
 
+            <!-- info -->
+            <div class="info">
+
+            
             <!-- weather image -->
              <div class="weather-image">
                 <img src="Images/rain.png" class="weather-icon">
@@ -49,6 +53,9 @@
                     </div>
                 </div>
               </div>
+
+              </div>
+              <!-- info ends -->
             
          </div>
 
@@ -60,7 +67,7 @@
             const searchBox = document.querySelector('.search-bars input')
             const searchBtn = document.querySelector('.search-bars button')
             const weatherIcon  = document.querySelector('.weather-icon')
-
+            const info = document.querySelector('.info')
 
            async function checkWeather(city){
                 const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
@@ -96,6 +103,7 @@
                 else{
                     weatherIcon.src = "Images/wind.png"
                 }
+                info.style.display="block"
             }
 
             function clicked(){
